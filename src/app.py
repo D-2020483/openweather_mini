@@ -5,6 +5,10 @@ app = Flask(__name__)
 
 BASE_URL = "https://api.open-meteo.com/v1/forecast"
 
+@app.route("/")
+def home():
+    return "🌤️ Welcome to the Weather API! Use /weather?lat=<lat>&lon=<lon> to get current weather."
+
 @app.route("/weather")
 def get_weather():
     lat = request.args.get('lat')
