@@ -1,0 +1,11 @@
+config:
+  target: "http://localhost:5000"
+  phases:
+    - duration: 60
+      arrivalRate: 10  # 10 new users per second
+scenarios:
+  - flow:
+      - get:
+          url: "/"
+      - get:
+          url: "/weather?lat=30.709675&lon=134.568701"
